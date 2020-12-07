@@ -11,11 +11,32 @@ public class Birthday_Calculator {
 	 
 	 
 	 //break down string
-	 String day =(String) birthday.subSequence(3, 5);
-	 String month =(String) birthday.subSequence(0, 2);
-	 String year =(String) birthday.subSequence(6, 10);
-	 System.out.println(day);
-	 System.out.println(month);
-	 System.out.println(year);
+	 String dayS =(String) birthday.subSequence(3, 5);
+	 String monthS =(String) birthday.subSequence(0, 2);
+	 String yearS =(String) birthday.subSequence(6, 10);
+	 System.out.println(dayS);
+	 System.out.println(monthS);
+	 System.out.println(yearS);
+	 
+	 int day =Integer.parseInt(dayS);
+	 int month =Integer.parseInt(monthS);
+	 int year =Integer.parseInt(yearS);
+	 
+	 
+	
+	 
  }
+
+public static String dayofweek(int day, int month, int year) {
+	String dayofweek ="";
+	int temp =0;
+	int[] montharray = {6, 2, 3, 5 , 0 , 3 , 5 , 1 , 4 , 6 , 2 ,4};
+	
+	
+	
+	return dayofweek;
+	
+}
+
+
 }
