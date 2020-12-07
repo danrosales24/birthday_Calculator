@@ -29,14 +29,18 @@ public class Birthday_Calculator {
 	 //System.out.println(month);
 	 //System.out.println(year);
 	 
-	int currYear = d.getYear();
-	System.out.println(currYear +1900);
+	int currYear = d.getYear()+1900;
+	int currMonth = d.getMonth();
+	int currDay = d.getDay();
+	
 	
 	 String answer1 = dayofweek(day,month,year);
 	 String answer2 =dayofweek(day,month,currYear);
 	 
 	 System.out.println("That means you were born on a " + answer1 +"!");
 	 System.out.println("This year it falls on a " + answer2 +"...");
+	 System.out.println("And since today is "+currMonth+"-"+currDay+"-"+currYear+",");
+	 System.out.println("there's only 2 more days until the next one when you turn 27!  (PLACEHOLDER");
 	
 	 
  }
@@ -63,13 +67,13 @@ public static String dayofweek(int day, int month, int year) {
     h = h % 7; 
     switch (h) 
     { 
-        case 0 : return "Saturday"; 
-        case 1 :  return "Sunday";  
-        case 2 :  return "Monday"; 
-        case 3 :  return "Tuesday";  
-        case 4 :  return "Wednesday";  
-        case 5 :  return "Thursday";  
-        case 6 :  return "Friday" ; 
+        case 0 : return "SATURDAY"; 
+        case 1 :  return "SUNDAY";  
+        case 2 :  return "MONDAY"; 
+        case 3 :  return "TUESDAY";  
+        case 4 :  return "WEDNESDAY";  
+        case 5 :  return "THURSDAY";  
+        case 6 :  return "FRIDAY" ; 
     } 
     return "";
 
