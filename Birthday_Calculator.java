@@ -44,115 +44,35 @@ public class Birthday_Calculator {
 public static String dayofweek(int day, int month, int year) {
 
 	
-	String dayofweek ="";
-	int yearV=0;
-	int temp =0;
-	month=month-1;
-	year=year-1;
 	
-	int[] montharray = {6, 2, 2, 5 , 0 , 3 , 5 , 1 , 4 , 6 , 2 ,4};
-	int[] evennumbers = {0, 0 ,0 ,0 ,1 ,1 ,1 ,1 ,2 ,2};
-	int[] oddnumbers = {0, 0 ,1 ,1 ,1 ,1 ,2 ,2 ,2 ,2 };
-	
-	if(year<1910 &&year>=1900) {
-		yearV=1;
-	}
-	if(year<1920 &&year>=1910) {
-		yearV=6;
-	}
-	
-	if(year<1930 &&year>=1920) {
-		yearV=5;
-	}
-	if(year<1940 &&year>=1930) {
-		yearV=3;
-	}
-	if(year<1950 &&year>=1940) {
-		yearV=2;
-	}
-	if(year<1960 &&year>=1950) {
-		yearV=0;
-	}
-	if(year<1970 &&year>=1960) {
-		yearV=6;
-	}
-	if(year<1980 &&year>=1970) {
-		yearV=4;
-	}
-	if(year<1990 &&year>=1980) {
-		yearV=3;
-	}
-	if(year<2000 &&year>=1990) {
-		yearV=1;
-	}
-	if(year<2010 &&year>=2000) {
-		yearV=0;
-	}
-	if(year<2020 &&year>=2010) {
-		yearV=5;
-	}
-	if(year == 2020) {
-		yearV=2;
-	}
-	
-	
-	
-	temp = day + montharray[month] + year%10+1+yearV ;
-	
-	
-	System.out.println("-------------------------");
-	System.out.println(montharray[month]);
-	System.out.println(day);
-	System.out.println(yearV);
-	System.out.println(year%10);
-	System.out.println(temp);
-	
+	if (month == 1) 
+    { 
+        month = 13; 
+        year--; 
+    } 
+    if (month == 2) 
+    { 
+        month = 14; 
+        year--; 
+    } 
+    int q = day; 
+    int m = month; 
+    int k = year % 100; 
+    int j = year / 100; 
+    int h = q + 13*(m + 1) / 5 + k + k / 4 + j / 4 + 5 * j; 
+    h = h % 7; 
+    switch (h) 
+    { 
+        case 0 : return "Saturday"; 
+        case 1 :  return "Sunday";  
+        case 2 :  return "Monday"; 
+        case 3 :  return "Tuesday";  
+        case 4 :  return "Wednesday";  
+        case 5 :  return "Thursday";  
+        case 6 :  return "Friday" ; 
+    } 
+    return "";
 
-	
-	if((year%10)%2 ==0) {
-		
-		temp = temp+evennumbers[(year%10)];
-	}else {
-		
-		temp = temp+oddnumbers[(year%10)];
-		
-	}
-	
-	int x = temp%7;
-System.out.println(x);
-	
-	if(x==1) {
-		dayofweek ="Monday";
-		
-	}
-	if(x==2) {
-		dayofweek ="Tuesday";
-		
-	}
-	if(x==3) {
-		dayofweek ="Wednesday";
-		
-	}
-	if(x==4) {
-		dayofweek ="Thursday";
-		
-	}
-	if(x==5) {
-		dayofweek ="Friday";
-		
-	}
-	if(x==6) {
-		dayofweek ="Saturday";
-		
-	}
-	if(x==0) {
-		dayofweek ="Sunday";
-		
-	}
-	
-	
-	return dayofweek;
-	
 }
 
 
